@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "Costa Cálida",
+        "url": "https://www.facebook.com/groups/propertiesforsaleincostacalida/"
+    },
+    {
+        "id": 2,
+        "name": "Costa Blanca",
+        "url": "https://www.facebook.com/groups/propertiesforsaleincostablanca/"
+    },
+    {
+        "id": 3,
+        "name": "Costa Almería",
+        "url": "https://www.facebook.com/groups/propertiesforsaleincostaalmeria"
+    },
+    {
+        "id": 4,
+        "name": "Costa del Sol",
+        "url": "https://www.facebook.com/groups/propertiesforsaleincostadelsol/"
+    },
+    {
+        "id": 5,
+        "name": "Lanzarote",
+        "url": "https://www.facebook.com/groups/propertiesforsaleinlanzarote/"
+    },
+    {
+        "id": 6,
+        "name": "Tenerife",
+        "url": "https://www.facebook.com/groups/propertiesforsaleintenerife/"
+    },
+    {
+        "id": 7,
+        "name": "Gran Canaria",
+        "url": "https://www.facebook.com/groups/propertiesforsaleingrancanaria/"
+    },
+    {
+        "id": 8,
+        "name": "Mallorca",
+        "url": "https://www.facebook.com/groups/propertiesforsaleinmallorca/"
+    },
+    {
+        "id": 9,
+        "name": "Menorca",
+        "url": "https://www.facebook.com/groups/propertiesforsaleinmenorca/"
+    },
+    {
+        "id": 10,
+        "name": "Ibiza",
+        "url": "https://www.facebook.com/groups/propertiesforsaleinibiza/"
+    }
+]

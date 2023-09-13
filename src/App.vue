@@ -1,14 +1,8 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <SlidingBanner msg="You're invited to our Costa Cálida Facebook group!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -19,6 +13,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
   <RouterView />
 </template>
+
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+import SlidingBanner from './components/SlidingBanner.vue'
+</script>
 
 <style scoped>
 header {
