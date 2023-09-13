@@ -1,7 +1,7 @@
 
 <template>
   <main>
-    Hoooho!
+    Home
   </main>
 </template>
 
