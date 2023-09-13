@@ -2,11 +2,9 @@
   <header>
 
     <div class="wrapper">
-      <SlidingBanner msg="You're invited to our Costa Cálida Facebook group!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/costa-calida">Costa Calida</RouterLink>
       </nav>
     </div>
   </header>
@@ -16,7 +14,6 @@
 
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import SlidingBanner from './components/SlidingBanner.vue'
 </script>
 
 <style scoped>

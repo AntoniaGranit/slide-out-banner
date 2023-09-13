@@ -44,7 +44,7 @@ export default defineComponent({
 h3 {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #0b3a80;
+  color: #004589;
 }
 
 p {
@@ -59,7 +59,7 @@ p {
 
 button {
   border: none;
-  background-color: #0b3a80;
+  background-color: #004589;
   color: #fff;
   padding: 12px;
   border-radius: 4px;
