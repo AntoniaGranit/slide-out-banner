@@ -1,7 +1,7 @@
 
 <template>
   <main>
-    Home
+    Home route
   </main>
 </template>
 

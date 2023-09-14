@@ -27,12 +27,24 @@ export default defineComponent({
     if (location) {
       this.location = location;
       console.log("location:", location)
-      this.decodedLocation = decodeURIComponent(location);
+      const capitalizedLocation = this.capitalizedLocation(decodeURIComponent(location));
+      this.decodedLocation = capitalizedLocation;
       this.facebookGroupUrl = this.generateFacebookGroupUrl(location);
       // this.showBanner = true;
     }
   },
   methods: {
+    capitalizedLocation(location: string) {
+      let words = location.split(' ');
+      let capitalizedLocation = words.map((word, index) => {
+        if (index === 0 || index === words.length - 1) {
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        } else {
+          return word.toLowerCase();
+        }
+        }).join(' ');
+        return capitalizedLocation;
+    },
     parseLocationFromURL() {
       const url = window.location.href;
       console.log("url:", url);
