@@ -4,7 +4,8 @@
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/costa-calida">Costa Calida</RouterLink>
+        <RouterLink to="/costa-cálida">Costa Cálida</RouterLink>
+        <RouterLink to="/costa-almería">Costa Almería</RouterLink>
       </nav>
     </div>
   </header>

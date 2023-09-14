@@ -1,32 +1,49 @@
 <template>
   <div class="banner">
-      <h3>{{ msg }}</h3>
-      <p>Stay updated on new <span class="bold">Costa Cálida</span> properties for sale via <br>our <span class="bold">private Facebook group.</span></p>
-      <button @click="addMore()">JOIN FACEBOOK GROUP</button>
+      <h3>You're invited to our {{ decodedLocation }} Facebook group!</h3>
+      <p>Stay updated on new <span class="bold">{{ decodedLocation }}</span> properties for sale via <br>our <span class="bold">private Facebook group.</span></p>
+      <a :href="facebookGroupUrl" target="_blank">
+        <button type="button" class="facebook-btn">
+          JOIN FACEBOOK GROUP
+        </button>
+      </a>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-
 export default defineComponent({
   name: 'SlidingBanner',
-  props: {
-    msg: {
-      type: String,
-      required: true,
-    },
-  },
-  methods: {
-    addMore() {
-      this.lol+2;
-    }
-  },
   data() {
     return {
-      lol: 218,
+      // showBanner: false,
+      location: '',
+      decodedLocation: '',
+      facebookGroupUrl: '',
     };
   },
+  mounted() {
+    const location = this.parseLocationFromURL();
+    if (location) {
+      this.location = location;
+      console.log("location:", location)
+      this.decodedLocation = decodeURIComponent(location);
+      this.facebookGroupUrl = this.generateFacebookGroupUrl(location);
+      // this.showBanner = true;
+    }
+  },
+  methods: {
+    parseLocationFromURL() {
+      const url = window.location.href;
+      console.log("url:", url);
+      return url.split('/').pop()?.replace(/-/g, ' ');
+    },
+    generateFacebookGroupUrl(location: string) {
+      const sanitizedLocation = location.replace(/%C3%AD/g, 'i').replace(/%C3%A1/g, 'a').replace(/ /g, '');
+      console.log("sanitizedLocation:", sanitizedLocation)
+      return `https://www.facebook.com/groups/propertiesforsalein${sanitizedLocation}`;
+    },
+  }
 });
 </script>
 
@@ -57,7 +74,7 @@ p {
   color: #575656;
 }
 
-button {
+.facebook-btn {
   border: none;
   background-color: #004589;
   color: #fff;

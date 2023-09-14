@@ -1,6 +1,6 @@
 <template>
-  <div class="costa-calida">
-    <SlidingBanner msg="You're invited to our Costa Cálida Facebook group!" />
+  <div class="banner-div">
+    <SlidingBanner />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import SlidingBanner from '../components/SlidingBanner.vue'
 
 <style>
 @media (min-width: 1024px) {
-  .about {
+  .banner-div {
     min-height: 100vh;
     display: flex;
     align-items: center;
