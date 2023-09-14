@@ -4,8 +4,16 @@
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/costa-cálida">Costa Cálida</RouterLink>
         <RouterLink to="/costa-almería">Costa Almería</RouterLink>
+        <RouterLink to="/costa-blanca">Costa Blanca</RouterLink>
+        <RouterLink to="/costa-cálida">Costa Cálida</RouterLink>
+        <RouterLink to="/costa-del-sol">Costa del Sol</RouterLink>
+        <RouterLink to="/gran-canaria">Gran Canaria</RouterLink>
+        <RouterLink to="/ibiza">Ibiza</RouterLink>
+        <RouterLink to="/lanzarote">Lanzarote</RouterLink>
+        <RouterLink to="/mallorca">Mallorca</RouterLink>
+        <RouterLink to="/menorca">Menorca</RouterLink>
+        <RouterLink to="/tenerife">Tenerife</RouterLink>
       </nav>
     </div>
   </header>
