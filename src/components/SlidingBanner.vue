@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <div class="banner" :class="{ 'slide-in': showBanner }">
       <h3>You're invited to our {{ decodedLocation }} Facebook group!</h3>
       <p>Stay updated on new <span class="bold">{{ decodedLocation }}</span> properties for sale via <br>our <span class="bold">private Facebook group.</span></p>
       <a :href="facebookGroupUrl" target="_blank">
@@ -16,7 +16,7 @@ export default defineComponent({
   name: 'SlidingBanner',
   data() {
     return {
-      // showBanner: false,
+      showBanner: false,
       location: '',
       decodedLocation: '',
       facebookGroupUrl: '',
@@ -30,7 +30,9 @@ export default defineComponent({
       const capitalizedLocation = this.capitalizedLocation(decodeURIComponent(location));
       this.decodedLocation = capitalizedLocation;
       this.facebookGroupUrl = this.generateFacebookGroupUrl(location);
-      // this.showBanner = true;
+      setTimeout(() => {
+        this.showBanner = true;
+      }, 1000)
     }
   },
   methods: {
@@ -69,8 +71,22 @@ export default defineComponent({
   flex-direction: column;
   position: fixed;
   bottom: 2rem;
+  left: -20%; /* Initially hidden off-screen to the left */
   padding: 20px;
   gap: 10px;
+}
+
+.slide-in {
+  animation: slide-in 2.5s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    left: -100%; /* Start off-screen to the left */
+  }
+  100% {
+    left: 2rem; /* Slide in to the current position */
+  }
 }
 
 h3 {

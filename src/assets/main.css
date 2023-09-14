@@ -1,7 +1,6 @@
 @import './base.css';
 
 #app {
-  margin: 0 auto;
   font-weight: normal;
 }
 
@@ -24,6 +23,6 @@ a {
   }
 
   #app {
-    padding: 0 2rem;
+    padding: 0;
   }
 }
