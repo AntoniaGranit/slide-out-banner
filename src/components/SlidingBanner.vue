@@ -36,6 +36,7 @@ export default defineComponent({
   methods: {
     capitalizedLocation(location: string) {
       let words = location.split(' ');
+      console.log("words array:", words)
       let capitalizedLocation = words.map((word, index) => {
         if (index === 0 || index === words.length - 1) {
           return word.charAt(0).toUpperCase() + word.slice(1);
@@ -66,6 +67,8 @@ export default defineComponent({
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  bottom: 2rem;
   padding: 20px;
   gap: 10px;
 }
@@ -86,13 +89,14 @@ p {
   color: #575656;
 }
 
-.facebook-btn {
+button {
   border: none;
   background-color: #004589;
   color: #fff;
   padding: 12px;
   border-radius: 4px;
   cursor: pointer;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
