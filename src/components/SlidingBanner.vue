@@ -1,5 +1,6 @@
 <template>
   <div class="banner" :class="{ 'slide-in': showBanner }">
+    <img alt="close banner" class="x-icon" src="@/assets/x.svg" @click="closeBanner()">
       <h3>You're invited to our {{ decodedLocation }} Facebook group!</h3>
       <p>Stay updated on new <span class="bold">{{ decodedLocation }}</span> properties for sale via <br>our <span class="bold">private Facebook group.</span></p>
       <a :href="facebookGroupUrl" target="_blank">
@@ -12,6 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+
 export default defineComponent({
   name: 'SlidingBanner',
   data() {
@@ -32,7 +34,7 @@ export default defineComponent({
       this.facebookGroupUrl = this.generateFacebookGroupUrl(location);
       setTimeout(() => {
         this.showBanner = true;
-      }, 1000)
+      }, 1000);
     }
   },
   methods: {
@@ -58,6 +60,9 @@ export default defineComponent({
       console.log("sanitizedLocation:", sanitizedLocation)
       return `https://www.facebook.com/groups/propertiesforsalein${sanitizedLocation}`;
     },
+    closeBanner() {
+    this.showBanner = false;
+  }
   }
 });
 </script>
@@ -72,8 +77,8 @@ export default defineComponent({
   position: fixed;
   bottom: 2rem;
   left: -20%; /* Initially hidden off-screen to the left */
-  padding: 20px;
-  gap: 10px;
+  padding: 1.3rem;
+  gap: 8px;
 }
 
 .slide-in {
@@ -89,15 +94,24 @@ export default defineComponent({
   }
 }
 
+.x-icon {
+  width: 15px;
+  height: 15px;
+  align-self: flex-end;
+  cursor: pointer;
+  position: absolute;
+  margin: -0.5rem;
+}
+
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: bold;
   color: #004589;
 }
 
 p {
   color: #8d8c8c;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .bold {
@@ -109,6 +123,7 @@ button {
   border: none;
   background-color: #004589;
   color: #fff;
+  font-size: 0.9rem;
   padding: 12px;
   border-radius: 4px;
   cursor: pointer;
