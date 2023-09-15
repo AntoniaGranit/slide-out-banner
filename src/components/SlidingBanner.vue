@@ -69,14 +69,14 @@ export default defineComponent({
 
 <style scoped>
 .banner {
-  width: 285px;
+  width: 95%;
   border: 1px solid rgb(221, 219, 219);
+  background-color: #fff;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   position: fixed;
-  bottom: 2rem;
-  left: -20%; /* Initially hidden off-screen to the left */
+  bottom: 1rem;
   padding: 1.3rem;
   gap: 8px;
 }
@@ -87,10 +87,10 @@ export default defineComponent({
 
 @keyframes slide-in {
   0% {
-    left: -100%; /* Start off-screen to the left */
+    top: -100%; /* Start off-screen to the left */
   }
   100% {
-    left: 2rem; /* Slide in to the current position */
+    top: 0rem; /* Slide in to the current position */
   }
 }
 
@@ -131,9 +131,26 @@ button {
 }
 
 @media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
+  .banner {
+  width: 285px;
+  border: 1px solid rgb(221, 219, 219);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 2rem;
+  left: -20%; /* Initially hidden off-screen to the left */
+  padding: 1.3rem;
+  gap: 8px;
+}
+
+  @keyframes slide-in {
+  0% {
+    left: -100%; /* Start off-screen to the left */
   }
+  100% {
+    left: 2rem; /* Slide in to the current position */
+  }
+}
 }
 </style>
