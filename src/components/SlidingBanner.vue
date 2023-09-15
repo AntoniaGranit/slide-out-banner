@@ -21,14 +21,13 @@ export default defineComponent({
       showBanner: false,
       location: '',
       decodedLocation: '',
-      facebookGroupUrl: '',
+      facebookGroupUrl: ''
     };
   },
   mounted() {
     const location = this.parseLocationFromURL();
     if (location) {
       this.location = location;
-      console.log("location:", location)
       const capitalizedLocation = this.capitalizedLocation(decodeURIComponent(location));
       this.decodedLocation = capitalizedLocation;
       this.facebookGroupUrl = this.generateFacebookGroupUrl(location);
@@ -39,26 +38,23 @@ export default defineComponent({
   },
   methods: {
     capitalizedLocation(location: string) {
-      let words = location.split(' ');
-      console.log("words array:", words)
-      let capitalizedLocation = words.map((word, index) => {
-        if (index === 0 || index === words.length - 1) {
-          return word.charAt(0).toUpperCase() + word.slice(1);
+      let words = location.split(' '); // Split location string into array with words separated by spaces
+      let capitalizedLocation = words.map((word, index) => { // Map over each word and its index in the array
+        if (index === 0 || index === words.length - 1) { // If first (index 0) or last (index equal to the length of array - 1) word in array
+          return word.charAt(0).toUpperCase() + word.slice(1); // Capitalize the character at index 0 of word 
         } else {
-          return word.toLowerCase();
+          return word.toLowerCase(); // Lowercase for all other words (i.e. "Costa del Sol")
         }
-        }).join(' ');
+        }).join(' '); // Join array back into string with spaces
         return capitalizedLocation;
     },
     parseLocationFromURL() {
-      const url = window.location.href;
-      console.log("url:", url);
-      return url.split('/').pop()?.replace(/-/g, ' ');
+      const url = window.location.href; // Get URL
+      return url.split('/').pop()?.replace(/-/g, ' '); // Get last part of URL and replace dashes with spaces for readability
     },
     generateFacebookGroupUrl(location: string) {
-      const sanitizedLocation = location.replace(/%C3%AD/g, 'i').replace(/%C3%A1/g, 'a').replace(/ /g, '');
-      console.log("sanitizedLocation:", sanitizedLocation)
-      return `https://www.facebook.com/groups/propertiesforsalein${sanitizedLocation}`;
+      const sanitizedLocation = location.replace(/%C3%AD/g, 'i').replace(/%C3%A1/g, 'a').replace(/ /g, ''); // Remove accents and spaces from location string to match Facebook group URL
+      return `https://www.facebook.com/groups/propertiesforsalein${sanitizedLocation}`; // Insert sanitized location into Facebook group URL
     },
     closeBanner() {
     this.showBanner = false;
@@ -157,14 +153,8 @@ button {
 @media (min-width: 1024px) {
   .banner {
   width: 285px;
-  border: 1px solid rgb(221, 219, 219);
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
   bottom: 2rem;
   left: -40%; /* Initially hidden off-screen to the left */
-  padding: 1.3rem;
   gap: 8px;
 }
 
