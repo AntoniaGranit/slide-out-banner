@@ -77,6 +77,7 @@ export default defineComponent({
   flex-direction: column;
   position: fixed;
   bottom: -50%; /* Initially hidden off-screen at the bottom */
+  /* top: -50%; IN CASE OF CHAT BOT */
   padding: 1.3rem;
   gap: 20px;
 }
@@ -93,6 +94,16 @@ export default defineComponent({
     bottom: 0rem; /* Slide up the screen to the bottom */
   }
 }
+
+/* IN CASE OF CHAT BOT: /*
+/* @keyframes slide-in {
+  0% {
+    top: -100%; 
+ }
+  100% {
+    top: 0rem; 
+ }
+} */
 
 .x-icon {
   width: 15px;
