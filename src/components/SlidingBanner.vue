@@ -76,21 +76,21 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   position: fixed;
-  bottom: -50%;
+  bottom: -50%; /* Initially hidden off-screen at the bottom */
   padding: 1.3rem;
   gap: 20px;
 }
 
 .slide-in {
-  animation: slide-in 2.5s ease-in-out forwards;
+  animation: slide-in 2.5s ease-in-out forwards; /* I thought this was a good sliding speed */
 }
 
 @keyframes slide-in {
   0% {
-    bottom: -100%; /* Start off-screen to the left */
+    bottom: -100%; /* Start off-screen */
   }
   100% {
-    bottom: 0rem; /* Slide in to the current position */
+    bottom: 0rem; /* Slide up the screen to the bottom */
   }
 }
 
@@ -130,6 +130,19 @@ button {
   width: 100%;
 }
 
+@media (min-width: 660px) and (max-width: 1023px) {
+  button {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.banner {
+  gap: 15px;
+}
+}
+
 @media (min-width: 1024px) {
   .banner {
   width: 285px;
@@ -139,7 +152,7 @@ button {
   flex-direction: column;
   position: fixed;
   bottom: 2rem;
-  left: -20%; /* Initially hidden off-screen to the left */
+  left: -40%; /* Initially hidden off-screen to the left */
   padding: 1.3rem;
   gap: 8px;
 }
@@ -149,7 +162,7 @@ button {
     left: -100%; /* Start off-screen to the left */
   }
   100% {
-    left: 2rem; /* Slide in to the current position */
+    left: 2rem; /* Slide in to the current position at the left-hand corner */
   }
 }
 }
