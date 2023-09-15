@@ -47,7 +47,6 @@ nav a {
 
 
 .main-section {
-  border: 2px solid black;
   height: 100vh;
 }
 

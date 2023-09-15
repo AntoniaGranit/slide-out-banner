@@ -2,7 +2,7 @@
   <div class="banner" :class="{ 'slide-in': showBanner }">
     <img alt="close banner" class="x-icon" src="@/assets/x.svg" @click="closeBanner()">
       <h3>You're invited to our {{ decodedLocation }} Facebook group!</h3>
-      <p>Stay updated on new <span class="bold">{{ decodedLocation }}</span> properties for sale via <br>our <span class="bold">private Facebook group.</span></p>
+      <p>Stay updated on new <span class="bold">{{ decodedLocation }}</span> properties for sale via our <span class="bold">private Facebook group.</span></p>
       <a :href="facebookGroupUrl" target="_blank">
         <button type="button" class="facebook-btn">
           JOIN FACEBOOK GROUP
@@ -69,16 +69,16 @@ export default defineComponent({
 
 <style scoped>
 .banner {
-  width: 95%;
+  width: 100%;
   border: 1px solid rgb(221, 219, 219);
   background-color: #fff;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   position: fixed;
-  bottom: 1rem;
+  bottom: -50%;
   padding: 1.3rem;
-  gap: 8px;
+  gap: 20px;
 }
 
 .slide-in {
@@ -87,10 +87,10 @@ export default defineComponent({
 
 @keyframes slide-in {
   0% {
-    top: -100%; /* Start off-screen to the left */
+    bottom: -100%; /* Start off-screen to the left */
   }
   100% {
-    top: 0rem; /* Slide in to the current position */
+    bottom: 0rem; /* Slide in to the current position */
   }
 }
 
