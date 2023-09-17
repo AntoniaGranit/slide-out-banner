@@ -10,4 +10,6 @@ Figuring out how to extract the location from the URL, remove accents and hyphen
 
 ## View it live
 
-Coming soon!
+https://yourpropertyabroad.com
+
+Available at any property listing detail page.
